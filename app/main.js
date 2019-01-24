@@ -21,10 +21,10 @@ firebase
 
 Vue.prototype.$firebase = firebase;
 
-Vue.registerElement(
-	'MLKitCustomModel',
-	() => require('nativescript-plugin-firebase/mlkit/custommodel').MLKitTextRecognition
-);
+// Vue.registerElement(
+// 	'MLKitCustomModel',
+// 	() => require('nativescript-plugin-firebase/mlkit/custommodel').MLKitCustomModel
+// );
 
 new Vue({
   render: h => h('frame', [h(App)])

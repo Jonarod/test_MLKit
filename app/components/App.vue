@@ -11,11 +11,12 @@
 
 <script>
 // import * as camera from "nativescript-camera";
+import { fromFile as loadImageSourceFromFile } from "tns-core-modules/image-source";
 
 export default {
     data() {
       return {
-        predictions: '',
+        predictions: [],
         img_src: "~/assets/images/nutella_test.jpg"
       }
     },
@@ -23,7 +24,7 @@ export default {
         queryMLKit() {
             this.$firebase.mlkit.custommodel
             .useCustomModel({
-                image: this.img_src,
+                image: loadImageSourceFromFile(this.img_src),
                 localModelFile: "~/assets/models/retrained_graph.tflite",
                 labelsFile: "~/assets/models/retrained_labels.txt",
                 maxResults: 5,
